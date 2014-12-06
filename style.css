@@ -1,0 +1,69 @@
+/* MAIN ELEMENTS */
+
+body {
+  background-color:white;
+  font-size: 15px;
+  text-align: left;
+  line-height: 24px;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: normal;
+
+}
+
+/* TABLE OF CONTENTS */
+
+#content{
+  padding-top:10px;
+  background-color:#white;
+  line-height:10px;
+}
+#content a{
+  text-decoration:none;
+  color:black;
+  -webkit-transition: all 0.4s ease;
+     -moz-transition: all 0.4s ease;
+       -o-transition: all 0.4s ease;
+      -ms-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+}
+
+ul{
+  border:1px solid;
+  position:relative;
+  height:100px;
+}
+
+/* ARTICLE */
+
+#article{
+  padding-top:50px;
+  margin-right:25%;
+  margin-left:25%;
+}
+#article p{
+  font-size:14px;
+}
+#article img{
+  display:center;
+  width:125%;
+  height:auto;
+  padding:20px 0px 20px 0px;
+  text-align:center;
+  font-family: 'Lucida Grande', sans-serif;
+  font-weight: normal;
+}
+
+/* BACK TO TOP BUTTON */
+
+.totop{
+  position:fixed;
+  left:0;
+  bottom:0;
+  padding:0px 0px 10px 10px;
+}
+.totop a{
+  text-decoration:none;
+  color:white;
+  font-size:12px;
+
+}
