@@ -1,141 +1,890 @@
-<!DOCTYPE html>
 <html lang="en">
+	<head>
+		<title>VOID</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700,400italic,500italic,600italic,700italic' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="js/jquery.min.js"></script>
 
-<head>
+		<script>
 
-  <title>Less is More -thesis draft-</title>
-  <meta charset="utf-8">
-  <meta name="robots" content="noindex">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+			$(function() {
+			  $('a[href*=#]:not([href=#])').click(function() {
+			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			      var target = $(this.hash);
+			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			      if (target.length) {
+			        $('html,body').animate({
+			          scrollTop: target.offset().top
+			        }, 1000);
+			        return false;
+			      }
+			    }
+			  });
+			});
 
-
-  <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
- 
-
-<style>
-h4 {
-    color:blue;
-    font-family: 'Lucida Grande';
-    font-size:100%;
-}
-
-</style>
-
-</head>
-<header>
-  <div id="header" a name="header">
-  <h4 style="text-align:center;" >Japanese Aesthetics and its impact on contemporary design </h3>
-  </div>
-
-</header>
-
-<body>
-   
-    <div id="content" a name="content">
-    <ol><a href="#one">Foreword</a></ol>
-    <ol><a href="#two">Introduction</a></ol>
-    <ol><a href="#three">Chapter 1: </a></ol>
-    <ol><a href="#four">Chapter 2: </a></ol>
-    <ol><a href="#five">Chapter 3: </a></ol>
-    <ol><a href="#seven">Conclusion</a></ol>
-    <ol><a href="#eight">Sources</a></ol>
-    <ol><a href="#nine">Abstract</a></ol>
-   
-  </div>
-
-<div id="article">
-    <div style="padding-bottom:100px;"><a name='one' />
-      <h4 style="text-align:center;">FOREWORD</h4>
-      <p> </p>
-    </div>
-
-    <div style="padding-bottom:100px;"><a name='two' />
-       
-    <h4 style="text-align:center;">INTRODUCTION</h4>
-   
-      <p> Learning from new cultures and their traditions bring an endless amount of inspiration and provides new perspectives to look at the world. Marcel Proust said: “there is a beauty in being surrounded by the foreign – seeing things from a new perspective, with ‘new eyes’”. Our cultural values and our background hugely influence the way we perceive the world and that opening to a different cultural tradition is beneficial. </br> 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For a long time already I have been drawn to Japanese culture. During my exchange in Aalto University, Helsinki, I spent most of my semester following Japan-related courses such as Japanese watercolor woodcut, Ukiyo-e, bookbinding and packaging design. One of my professors at Aalto became an inspiration for this thesis by describing an aesthetic concept from Japan that has a worldview opposite to the Western world. It finds beauty in the most unusual places like emptiness, mundane everyday objects, and things so subtle and desolate we do not normally even realize them. Reading more about it turned my worldview upside down. Personally I find a lot of the Japanese ideas fascinating, because even though they are ancient ideas, they could still be very valuable in today’s world. It is interesting to how Japan, being one of the most technologically developed countries, still has a prevailing traditional side. In this thesis I want to investigate what exactly makes the Japanese aesthetics so distinctive from rest of the world and why this kind of simplicity is so powerful and inspiring. With the diminishing cultural values in our contemporary society and the heavy influence from the dominating Western design, are there still traces of the Japanese aesthetics in contemporary design?  If so, how are they implemented? Japanese graphic designer and author Kenya Hara states: “today, we seem to be experiencing a rationalization of the senses. The art of refinement has been half-forgotten, and attentiveness to detail, absorption, and slow engagement are neglected.” The statement applies to today’s world, with its overwhelming and constantly accelerating consumer and material culture, fast paced lifestyles and that we tend to neglect and take the everyday things around us for granted. Also, the Internet culture is flattening our aesthetic sensibility to an extend, and a lot of times trends are being copy-pasted over and over again instead of looking for new innovative solutions. Our graphic design education predominantly concentrates on Western design, so therefore it is interesting to learn about the practice from other parts of the world. I want to investigate what could we learn from the Japanese ideas and how could they be valuable not only in contemporary graphic design but in society in general. </br> 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This thesis will investigate the qualities and values of traditional Japanese aesthetic concepts and analyze their presence and significance in contemporary design. I want to find out where these aesthetic values are originating from; how did the discovery of simple beauty come about and what makes it so distinctive from rest of the world? This research will analyze these matters in the context of the work of contemporary designer Kenya Hara among other notable Japanese designers. By analyzing “Void” by the architect Tapio Periäinen, I would also like to explore the importance of the ideology from an ecological point of view against our wasteful habits of consumption and present ideas of how could contemporary (graphic) design benefit from the ultimate simplicity. </br> 
+			$(document).ready(function(){
+			  $(".navclick").click(function(){
+			    $(".nav").slideToggle(600);
+			  });
+			$(".src_link").css('cursor','hand');
+			$(".navclick").css('cursor','hand');
+			/* If a SUP is hovered, the corresponding source is shown */
+			$(".src_link").hover(function() { 
+			var number = $(this).html();
+			var selStr = ".source#"+number;
+			var ypos = $(this).offset().top;
+			$(selStr).offset({top: ypos});
+			$(selStr).fadeTo(600,1.0);},function() {
+			var number = $(this).html();
+			var selStr = ".source#"+number;
+			$(selStr).fadeTo(600,0.0);});
+			});
 
 
-<div style="padding-bottom:100px;"><a name='three' />
-
-</div>
-
-<div style="padding-bottom:100px;"><a name='four' />
-<h4 style="text-align:center;">CHAPTER 1: </h4>
-
-Leonard Koren, the author of “Wabi-Sabi for artists, designers, poets and philosophers, states that the traditional Japanese ideas of aesthetics portray an exact opposite of Western, especially American, ideal of the ultimate beauty.  According to him, in most of the Western world the conventional beauty is something monumental, durable and spectacular whereas in Japan beauty is seen in the subtle and simple things and on the banal everyday matters.  The core of Japanese aesthetics is refined simplicity, emptiness most specifically.  The Japanese have philosophy called Ma that describes and gives shape to void and nothingness. This concept is not much researched is Western word and we do not even have a word or a term for it.  In the West, nothingness usually has a negative connotation and it’s meaning is overlooked. These Japanese aesthetic concepts are so intriguing because of their distinctiveness from rest of the world. They are deeply rooted in the Japanese history and culture, starting from the Heian era in the 15th century. </br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;West has an immense influence on the modern Japanese culture, and together with the influence from the East, they have played a big part on shaping it as it is seen today. What is intriguing is that even though there is a predominant mix of elements from both worlds, Japan still managed to develop and preserve recognized and distinctive traditional aesthetics. The Japanese have numerous aesthetic concepts that even the Japanese have trouble of explaining in words. These concepts include Ma and Wabi-Sabi, that all depict a different kind of beauty. The common ideology of theses concepts are that beauty can be found in the most unexpected forms.  Shortly, Wabi-Sabi characterizes rural and desolate beauty and Ma, an empty and formless beauty and sees emptiness as the ultimate simplicity.  
-Wabi-Sabi is the most apparent and characteristic feature of what is seen as a traditional Japanese aesthetics. The Wabi-Sabi ideas are closely linked to Zen Buddhist thoughts but also can be traced to the earliest examples of Japanese literature.   Wabi-Sabi is not just a specific aesthetic concept, but it could serve as a way of life of ignoring material hierarchy and finding glory in the mundane. Wabi-sabi depicts refined simplicity and imperfect beauty (wabi) and the celebration of that which is crude, faded and dark and hidden beauty (sabi).  It accepts that life is only temporary. According to Wabi-Sabi, beauty can be found in the most unconventional, minor and hidden matters.  It is everything that today’s sleek, mass-produced, technology-saturated culture isn’t. “Wabi-Sabi is the beauty of the imperfect, impermanent, incomplete, modest, humble and the unconventional. Wabi-sabi objects are earthy, simple, unpretentious and made out of natural materials.” </br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wabi-Sabi understands the tender, raw beauty of a gray December landscape and the aching elegance of an abandoned building or a shed.  It is not the magnificent sakura trees blooming, but the process of the leaves withering away. It celebrates cracks and crevices and all the other marks that time and weather and use leave behind. In order to appreciate the Wabi-Sabi beauty, one needs a different mindset, because things may first look ugly. “Wabi-sabi is not about gorgeous flowers, majestic trees, or bold landscapes. It is about the minor and the hidden, the tentative and the ephemeral: things so subtle and evanescent that they are invisible to the vulgar eyes.” By learning to appreciate or at least to understand Wabi-Sabi could be an eye opener. It could remind us that we are all transient beings on this planet that our bodies, as well as the material world around us, are in the process of returning to dust. Wabi-Sabi teaches us to learn to embrace both the glory and the melancholy found in these marks of passing time. All though both of them embrace simplicity, Wabi-Sabi is the opposite of modernism. Wabi-Sabi is human and nature-oriented where as modernism is technology oriented. Modernism strives for enduring and man-made things where as Wabi-Sabi is about natural materials and not necessarily temporary. An example of Wabi-Sabi aesthetics can be seen, for example, in the mundane every day objects, and things evanescent. </br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Emptiness is the basic concept of Japanese aesthetics. A Finnish architect Tapio Periäinen explains in his book “Void” the meaning of “Ma” by “being the pure and essential void between all things”  and the ultimate simplicity. It sees nothingness as the center and origin of everything and a space towards things evolve and come from. This mentality is something Westerns have difficulties to grasp. In the West an empty space is just an empty space, and there is no such concept as “Ma” to describe it.  Periäinen claims that an empty room is infact not empty; it is a room full of possibilities. To describe the meaning of “Ma”, Periäinen uses the Japanese flag as an example. As known, the flag has a red circle in the middle and nothing around it. He also explains that Ma is basically the pauses in speech, which make the words standout. It is the white space around letters that enables the shape to exist. An empty white canvas gives the possibility to start drawing. “It is the purposeful pauses in speech, which make the words stand out, and it is the quiet time we need to make our busy lives meaningful. It is the silence between the notes, which make the music, and MA is what creates the peace of mind we all need, so that there is room for our thoughts to exists properly.”  Ma is visible in a great deal of Japanese way of living. It is seen in the architecture, garden design, music, flower arrangements, calligraphy and poetry. It is basically a way of life, and not just a philosophical and artistic concept.</br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japanese houses have certain serenity and peacefulness to them, and it is due to the predominant presence of emptiness. A Japanese house supports the elimination of all that is considered as unnecessary. To the eyes of a Westerner, Japanese houses may seem as extremely modest. The houses have only little space with very minimal furniture with lots of emptiness. However, they are still functional. It makes one wonder whether all the material possessions we have are after all necessary and could we do with less? As an example, most Japanese rooms do not have beds or even shelves. A lot of the stuff is kept on the floor. People sleep on tatami mats, which in the morning would be placed in the closets and the room would have more space to do daily chores. 
-Ma and Wabi-Sabi concepts and this kind of ultimate, almost primitive, simplicity can be seen in the traditional Japanese tea ceremony. “Although Wabi-Sabi quickly permeated almost every aspect of sophisticated Japanese culture and taste, it reached its most comprehensive realization within the context of the tea ceremony”.  A Japanese traditional tea ceremony takes place in a completely empty room, apart from the things that may be placed there temporarily, such as a flower arrangement. (more about tea ceremony) </br> 
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;According to Kenya Hara the West of simplicity exists only for a little amount of time compared to Japan.  It seems as if we need to have all this material in our surroundings to fill the void and to create meaning in our lives. This can be seen especially in most Western interior design, where we have the need to cover our walls with paintings and frames and tables filled with decoration objects.  Periäinen questions weather it the fear of void built into all people, or is it a phobia brought about by the development of the conception of the world?  (more) In the past we needed this kind of extravagancy to demonstrate the power of the king or an emperor. Japa¬¬nese culture is partly an exception to this: the space of living housing and interior decoration is based on void, which is seen as a positive quality.  This makes me think of another exception that embraces simplicity and “white”; Scandinavian design.
-“During the Heian era, Japan rejuvenated its focus on the natural world, embracing its unpredictable and instable nature and adopting sympathy to and appreciation for nature.”  The burning of the temples and loss of everything could justify the origin of their aesthetic preference and be an indication of the Japanese mentality; acceptation of  things as they are… and coming to “agreement” with nature”.</br> 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japanese aesthetics praise the natural aspects of things… Lauren Prusinski says that “the Japanese have a keen eye for their surroundings and have effectively mended ancient aesthetics with modern advancement postponed to their natural roots by highlighting rather than withdrawing their eternal presence in society.” The high contrast between technology and nature, and the contrast between Western consumer influence and the pure Japanese traditions is very intriguing. Immense and tremendously busy cities such as Tokyo and Osaka are filled with material hysteria, but when entering the rural countryside’s or temples in places like Kyoto or Nara, one is bound by serenity and serenity. The Japanese have a quite humble and traditional architecture and way of life. Even though the contrast between the urban and the rural is so distinctive, there is something about the opposing elements that seem to fit perfectly and complement each other’s and form a harmonious blend of the contrasts. For instance, the various temples and gardens spread around the urban areas still demonstrate the Japanese consciousness of her relationship with nature. The environment that surrounds these manmade temple spaces enhances the unnatural qualities—without nature they would simply be cold, unearthly structures isolated from their surroundings.  </br> 
+			/* New scroll function with timeout (see:
+			http://stackoverflow.com/questions/3701311/jquery-event-when-user-stops-scrolling)
+			*/
+			
+			$.fn.scrollEnd = function(callback, timeout) {          
+			$(this).scroll(function(){
+			var $this = $(this);
+			if ($this.data('scrollTimeout')) {
+			clearTimeout($this.data('scrollTimeout'));
+			}
+			$this.data('scrollTimeout', setTimeout(callback,timeout));
+			});
+			};
 
 
-</div>
+			/* Every time the user stopped scrolling... */
+
+			$(window).scrollEnd(function() {
+			
+			var allElements = [];
+
+			/* Get current center coordinates */
+			var scrollCenter = $(window).scrollTop() + ($(window).height()/2);
+
+			/* Find centered DIV */
+
+			var centeredElement;
+			var minOffset = -1;
+			var i = 0;
+
+			$(".hideme").each(function() {
+			$(this).attr("id",i);
+			i++;
+			var elemCenter = $(this).offset().top + ($(this).height() / 2);
+			var offset = Math.abs(scrollCenter-elemCenter);
+			if(minOffset == -1 || offset < minOffset) {
+			centeredElement = $(this);
+			minOffset = offset; }
+     		        });
+
+	                /* Fade out all except of the centered one */
+		       
+	                $(".hideme").each(function() {
+                        if($(this).attr("id")!=centeredElement.attr("id") && $(this).css("opacity")==1.0) {
+                        $(this).fadeTo(600,0.1); }});
+
+                        /* Fade in centered one */
+                        centeredElement.fadeTo(600,1.0);                       
+
+                       },150);
+
+		</script> 
+	</head>
+
+	
+	<body>
+
+		<div class="nav">
+			
+				<b><a HREF="#top"><h5>Beauty in unexpected forms</h5></a></b>
+				<A HREF="#intro"><h5>Introduction</h5></a></b><BR>
+				<A HREF="#origin"><h5>Origin of Japanese Aesthetics</h5></a><BR>
+				<A HREF="#desolate"> <h5>Beauty in the Desolate</h5></a></b><BR>
+				<A HREF="#empty"><h5>Beauty in the empty</h5></a><BR>
+				<A HREF="#ordinary"> <h5>Defamiliarizing the ordinary</h5></a><BR>
+				<A HREF="#communication"><h5>Emptiness in Communication</h5></a></b><BR>
+				<A HREF="#innovation"><h5>Sustainable design</h5></a><BR>
+				<A HREF="#ecological"><h5>Ecological value of emptiness</h5></a><BR>
+				<A HREF="#conclusion"><h5>Conclusion</h5></a></b><BR>
+				<A HREF="#abstract"><h5>Abstract</h5></a><BR>
+				<A HREF="#sources"><h5>Sources</h5></a></b>
+				
+		</div>
 
 
-<div style="padding-bottom:100px;"><a name='five'/>
-<h4 style="text-align:center;">CHAPTER 2: </h4>
-<p>The Japanese traditional aesthetics values are very visible in the contemporary Japanese design. Rem Koolhaas stated that modernity would kill all the cultural traditions. That being said, Japanese design is very unique in a sense that it uses the old traditional ideology and transforms and updates it into a new context. </br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japanese graphic designer, a curator and the art director of Japanese house brand Muji, Kenya Hara  states that minimalism is the most comfortable way for Japan to face the world. Hara is a really valuable as a Japanese designer due to his ability to articulate a clear philosophy about Japanese design that is sensitive to the present as much as it is to the past. He is seen as the future of Japanese design. He believes that Asian countries have a key cultural resource that cannot be found anywhere else in the world and that “Lifestyle has value in Asia”. “The Swiss have their cheese, the French their wine, but Hara’s future Japan will be based on the export of a way of life.” 
-Hara’s design aesthetics are profoundly related to the basic concept of Japanese aesthetics of emptiness. One of Hara’s books “White” is entirely dedicated on this subject matter. The book explores the essence of white, which is closely related to the origin of Japanese aesthetics that symbolizes simplicity and subtlety. The central concepts discussed in “White” are emptiness and the absolute void. White and emptiness are closely intertwined and the concept if empty space brings those two things together. Hara melds everyday observations with reflections on Japanese aesthetics and sensitivity, he also amplifies the need to critically revise our understanding of the senses. He challenges the simplifications that inform much present day thought concerning what can be felt, experienced, and emotionally negotiated.</br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hara believes that a good design creates another way of looking at something and “never looking at a plate or a cup in quite the same way again”. Hara views this kind of thought process as an “awakening” that deepens our understanding of the objects in question. “This is what I mean when I say design should make the known become unknown.”  Hara’s work centers questions such how to look at things in an unfamiliar perspective such as using a nonhuman scale.  What could common daily products become if they were redesigned? How can we design for all five senses? Hara’s work “what do macaroni and architecture have in common?” His work that joins macaroni and architecture does exactly that. 
-Hara’s ideas are valuable because they make us question everything around us.  The perspectives of his work awaken our senses from our numbness and after that we won’t look at the world quite the same way again. The society would benefit from a new perspective of looking at things. We take things around us for granted and I believe that design could make people see the mundane everyday objects in a new light.  </br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designers have the ability of manipulating reality and present ordinary matter in a new light. Kenya Hara’s work does exactly that. Hara sees graphic design as a form of communication putting emphasis on the value of emptiness in communication. “The mechanism of communication is activated when we look at an empty vessel, not as a negative state, but in terms of its capability to be filled with something.”  He writes about the power of non-verbal communication such as a nod or eye contact that can convey so much. Japanese way of communication is full of emptiness; subjects of sentences are often left unsaid. Words are not always necessary in a conversation. The Western style of communication is more direct and in most countries, especially in the US, find a silence in a conversation rather awkward and therefore they have a need to keep the conversation going. Hara views people reaching a harmony in silence to be a highly refined level of communication. Listening is a crucial part of effective communication, and this applies also to design; “a Good communication has the distinction of being able to listen to each others, rather than to press one’s opinion onto the opponent.”  His work “…” supports this ideology clearly. A good design should not impose ideas and opinions onto its viewer; instead it should leave room for interpretation and the viewer to experience the work. “Hara compares this kind of communication with an empty container. In visual communication, there are equally signals whose signification is limited, as well as signals or symbols such as the red circle on the Japanese flag, which is like an empty container – permit every signification and do not limit imagination” Hara points out the importance of removing all the decorations and everything that is unnecessary. By doing this design does not become poorer, but better. This view is directly linked to the traditional ideas of refined simplicity and the complete lack of everything unnecessary. Hara is the founder and an art director of the Japanese “no brand” Muji . </br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Muji’s aesthetics and ideology is directly connected to the Japanese aesthetics of simplicity. It is distinguished by its minimalism and respect towards nature. It emphases on recycling and avoids waste in production and packaging. It also emphases on no-logo or “no-brand” policy which means that only a little amount of money is used for marketing and advertisement.  Muji’s design style has been described to have “mundanity, and being “no-frills” and “minimalist” and also as “Bauhaus-style” . Muji’s product design, brand identity, is based around the selection of materials, efficient manufacturing processes and minimal packaging. Muji products have a limited color range that is very natural. The image of a man standing in a great emptiness pretty much summarizes the ideology of Muji.  He looks so tiny and humble amongst the void, which fits in with their ideology that man is not the center of the world, but equal to everything.</br> 
-
-<IMG SRC="Images/muji.jpg" width="50%" height="50%"/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hara curated a numerous of exhibitions, one being “HAPTIC_Awakening the senses (2004) demonstrated through contemporary designs. The limp remote control below is a unique approach (…) designed for the exhibition and for Panasonic. When the remote control is switched off, it droops as if it were dead, similar to Salvador Dali surreal painting style. The material used for the production was unusual and appealed to the sense of touch in human.  This makes us see a normal everyday object in a whole new light. “He makes it clear "Exformation" doesn't mean making known, but understanding how little we know. It is interesting to see how information is passed across through a simple object. "Objects that hold thought contributes to how communication travels.” “RE-DESIGN daily products of the 21st Century” is another of Hara’s exhibitions. It shows how daily life serves as a great source for design.  These objects included toilet paper, tea bag, matches, and stamps etc. and the designers redesigned these objects to create a new experience and new ways to use them. Some of the objects were made to make our daily lives more beautiful and our daily routines more enjoyable. Some objects did the opposite; in fact they became harder to use in order to convey a serious message. This happened with the redesign of the toilet paper for example. The hole in the paper roll was cut to be a square shape instead of a circle, which made it difficult to roll. This change is very subtle but the message is strong and the meaning of the object is changed; instead of being just a toilet paper, it now serves as a reminder of our wasteful and unsustainable habits and that we should slow down consumption of i.e. paper. The redesign of the matches was also designed to remind us of the diminishing forest. These redesigned products are all about preservation and renewal by making simple, yet thoughtful alterations. The chocolate bar may seem at first just like a normal cute pattern, however in the end because of the cut of the pattern, you will end up eating less chocolate; and therefore fewer calories are consumed. This reminds the audience to cut down sugar consumption, because of the numerous underlying health hazards........ </p>
-</div>
-
-<IMG SRC="Images/pasta.jpg" width="50%" height="50%"/>
+		<div class="navclick">
+		<a>Menu</a>
+		</div>
 
 
-<div style="padding-bottom:100px;"><a name='five'/>
-<h4 style="text-align:center;">CHAPTER 3: </h4>
-<p>lala</p>
-</div>
+		<div class="mainsources">
+
+			<span class="source" id="1"><b>1.</b>  Pico I. (2013), <i>Where is Home</i>, TedTalks, http://www.ted.com /talks/pico_iyer_ where_is_home?language=en</span>
+  			<span class="source" id="2"><b>2.</b> Periäinen, T.  (1998), Tyhjä/Void, Kustantajat Sarmala OY, Finland</span>
+
+  			<span class="source" id="3"><b>3.</b> Kenya Hara (1958) is a Japanese graphic designer, a curator and the art director of Japanese house brand Muji. 
+He is also a teacher at the Musashino Art University, Tokyo. Quote from: Hara, K (2009), <i>White</i>, Lars Müller </span>
+			<span class="source" id="4"><b>4</b> *Frank Lloyd Wright is best known as a revolutionary American architect. Japan and Japanese prints had a deep influence on his work.</span>
+			<span class="source" id="5"><b>5</b> Encyclopaedia Britannica. (2014) <i>Minimalism Art Movement</i> http://www.britannica.com/ EBchecked/topic>Minimalism</span>
+			<span class="source" id="6"><b>6</b> Kenya Hara exploring emptiness (2013) India Culture Lab youtube.com/watch?v= 5BOeEEq0tJc</i></span>
+			<span class="source" id="7"><b>7</b> Walkup, N. Japanese Aesthetics Tea Ceremony, https://ntieva.unt.edu</span>
+			<BR>
+			<span class="source" id="8"><b>8</b> <i>idem</i></span>
+			<span class="source" id="9"><b>9</b>  Prusinski, L. Wabi-Sabi, Mono no Aware, and Ma: Tracing Traditional Japanese Aesthetics Through Japanese History, http://studiesonasia. illinoisstate.edu</span>
+			<span class="source" id="10"><b>10</b> <i>idem</i></span>
+			<span class="source" id="11"><b>11</b>  Koren,  L. (1994), <i>Wabi-Sabi for Artists, Designers, Poets and Philosophers</i>, Imperfect Publishing, Point Reyes, California</span>
+		        <span class="source" id="12"><b>12</b> <i>idem</i></span>
+			<span class="source" id="13"><b>13</b> Prusinski, L. Wabi-Sabi, <i> Mono no Aware, and Ma: Tracing Traditional Japanese Aesthetics Through Japanese History</i> </span>
+			<span class="source" id="14"><b>14</b><i>idem</i></span>
+			<span class="source" id="15"><b>15</b> <i>Koren,  L. (1994), <i>Wabi-Sabi for Artists, Designers, Poets and Philosophers</i></i></span>
+			<span class="source" id="16"><b>16</b> <i>idem</i> p.50</span>
+			<span class="source" id="17"><b>17</b> <i>idem</i> p.51</span>
+			<span class="source" id="18"><b>18</b> <i>idem</i> p.31</span>
+			<span class="source" id="19"><b>19</b> Periäinen, T. (1998) Tyhjä/Void, p.54 </span>
+			<span class="source" id="20"><b>20</b> <i>Koren,  L. (1994), <i>Wabi-Sabi for Artists, Designers, Poets and Philosophers</i></i>	</span>
+			<span class="source" id="21"><b>21</b> Tanizaki, J. (1993),  <i>In Praise of Shadows</i>, Leete’s Island Books</span>
+			<span class="source" id="22"><b>22</b> Periäinen, T. (1998) Tyhjä/Void, p.10 </span>
+			<span class="source" id="23"><b>23</b> Periäinen, T. (1998) Tyhjä/Void, p.11 </span>
+			<span class="source" id="24"><b>24</b> Kenya Hara exploring emptiness (2013) India Culture Lab www.youtube.com</span>
+			<span class="source" id="25"><b>25</b> Encyclopaedia Britannica. (2014) Minimalism Art Movement http://www.britannica. com/ Minimalism</span>
+			<span class="source" id="26"><b>26</b> Periäinen, T. Tyhjä/Void, p.20</span>
+			<span class="source" id="27"><b>27</b> Periäinen, T. (1998) Tyhjä/Void, p.20</span>
+			<span class="source" id="28"><b>28</b> Kenya Hara exploring emptiness (2013) India Culture Lab www.youtube.com/
+			</span>
+			<span class="source" id="29"><b>29</b> Hara, K (2009), White, Lars Müller Publishers</span>
+			<span class="source" id="30"><b>30</b> Avella, N. (2004), Graphic Japan: From Woodblock and Zen to Manga and Kawaii, Rotovision </span>
+
+			<span class="source" id="31"><b>31</b> <i>idem</i> </span>
+			<span class="source" id="32"><b>32</b> Kenya Hara exploring emptiness (2013) India Culture Lab https://www.youtube.com/ </span>
+			<span class="source" id="33"><b>33</b> <i>idem</i></span>
+			<span class="source" id="34"><b>34</b> Hara, K. (2009), <i>White</i></span>
+
+			<span class="source" id="35"><b>35</b>  <i>idem</i></span>
+			<span class="source" id="36"><b>36</b>  <i>idem</i>    </span>
+			<span class="source" id="37"><b>37</b>  <i>idem</i>   </span>
+			<span class="source" id="38"><b>38</b>  <i>idem</i>  </span>
+
+			<span class="source" id="39"><b>39</b>  Hara, K. (2009), <i>White</i>   </span>
+			<span class="source" id="40"><b>40</b>  <i>idem</i></span>
+			<span class="source" id="41"><b>41</b>  <i>idem</i></span>
+			<span class="source" id="42"><b>42</b>  <i>idem</i></span>
+			<span class="source" id="43"><b>43</b> Design Boom, (2012) Kenya Hara: Designing Design, http://www.designboom.com/</span>
+			<span class="source" id="44"><b>44</b>  Hara, K. (2009), White, p.70 </span>
+			<span class="source" id="45"><b>45</b>  <i>idem</i> </span>
+			<span class="source" id="46"><b>46</b>  Hara, Kenya, (2007), Designing Design, Lars Müller Publishers</span>
+			<span class="source" id="47"><b>47</b>  Yasuhiro Ishimoto (1921-2012) was an influential Japanese-American photographer.
+			Hara, K. (2009), White, p.70</span>
+			<span class="source" id="48"><b>48</b> Hara, Kenya, (2009), White, Lars Müller Publishers, p.71 </span>
+			<span class="source" id="49"><b>49</b> <i>idem</i>  </span>
+			<span class="source" id="50"><b>50</b> Ryan Hagerman, A collection of visual research surveying the history of graphic 
+			design in Japan. http://gurafiku.tumblr.com/
+			</span>
+			<span class="source" id="51"><b>51</b> Source could not be aquired </span>
+			<span class="source" id="52"><b>52</b> ) Fukuda Shigeo (1932-2009) was a sculptor, graphic artist and posterdesigner who created optical illusions.  </span>
+			<span class="source" id="53"><b>53</b> White, A. W. (2002) The Elements of Graphic Design, Allworth Press </span>
+			<span class="source" id="54"><b>54</b>  <i>idem</i></span>
+			<span class="source" id="55"><b>55</b>  White, Alex, W, The Elements of Graphic Design</span>
+			<span class="source" id="56"><b>56</b>  <i>idem</i></span>
+			<span class="source" id="57"><b>57</b>  Muji is the biggest export and internationally most well know Japanese house brand selling consumer and household goods. www.muji.com  </span>
+			<span class="source" id="58"><b>58</b>  ) No-logo policy means that a minimun amount of money is spend on brand identity and advertisement of the company.</span>
+			<span class="source" id="59"><b>59</b> <i>idem</i> </span>
+			<span class="source" id="60"><b>60</b> Design Boom, (2012) Kenya Hara: Designing Design, http://www.designboom.com/
+			</span>
+			<span class="source" id="61"><b>61</b> <i>idem</i>  </span>
+			<span class="source" id="62"><b>62</b> Shigeru Ban (1957) is a Japanese architect,<i> idem </i></span>
+			<span class="source" id="63"><b>63</b> <i>idem</i> </span>
+			<span class="source" id="64"><b>64</b> <i>idem</i> </span>
+		</div>
 
 
-<div style="padding-bottom:100px;"><a name='seven'/>
-<h4 style="text-align:center;">CONCLUSION</h4>
-<p>lala</p>
-</div>
 
-<div style="padding-bottom:100px;"><a name='eight'/>
-<h4 style="text-align:center;">SOURCES</h4>
-<p>lala</p>
-</div>
+		<div class="container">
+			<A NAME="top"></a><BR><BR>
 
-<div style="padding-bottom:100px;"><a name='eight'/>
-<h4 style="text-align:center;">ABSTRACT</h4>
-<p>lala</p>
-</div>
+			<div class="header">
+				<h1>Beauty in Unexpected</h1> <h1>forms</h1>
+
+				<br>
+				<br>
+				<br>
+		
+
+				<h2>Japanese Aesthetics of Simplicity</h2>
+
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 
 
-<div style="padding-bottom:100px;"><a name='nine'/>
+				<h2> irene salo </h2>
+				<h2> kabk 2015 </h2>
+			</div>
 
-</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>	
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+		
+			<A NAME="intro"></a>
+			<div class="intro">
+			<h4>Introduction</h4>
+			
+
+			<br>
+			<br>
+
+			<div class="hideme"> Learning from different
+			cultures and their traditions brings an
+			endless amount of inspiration and provides new
+			perspectives to look at the world. Marcel
+			Proust said: “there is a beauty in being
+			surrounded by the foreign – seeing things from
+			a new perspective, with new
+			eyes<sup class="src_link">1</sup>”. Our
+			cultural values and background hugely
+			influence the way we perceive the world.
+			</div>
+
+			<br>
+
+			<div class="hideme"> For a long time, I have
+			been fascinated by Japanese culture. In the
+			past, I was enrolled into an international
+			school, where I formed close friendships with
+			a Japanese family.  I learned about their
+			traditions and visited them in Japan. Last
+			year, my interest was broadened further when I
+			went on an Erasmus exchange program in Aalto
+			University, Helsinki where I spent most of my
+			semester following Japan-related courses such
+			as Japanese watercolor woodcut, Ukiyo-e,
+			bookbinding and packaging design. My professor
+			in Aalto, Kari Laitinen, inspired my thesis
+			topic by mentioning a concept from Japan that
+			views the world in a seemingly opposite way
+			compared to the West. </div>
+
+			<br>
+
+			<div class="hideme"> These concepts find
+			beauty in the most unusual places such as in
+			emptiness, subtlety and overlooked
+			details. Reading more about these aesthetic
+			concepts turned my worldview upside down. In
+			Japan, simplicity is equivalent to emptiness
+			and it is seen as a positive quality whereas
+			in West, emptiness and nothingness are viewed
+			in a rather negative manner. As an example,
+
+			<br>
+			<br>
+			<p>
+			<h3>
+			<b>“Shakespeare: “Nothing will come of
+			nothing.” Bertolt Brecht: “what happens to the
+			holes when the cheese is
+			gone<sup class="src_link">2</sup></b>?”
+			</h3>
+			</p>
+		        </div>
+
+			<br>
+
+			<div class="hideme">Our graphic design
+			education predominantly concentrates on
+			Western design. Subsequently, it can be
+			interesting to learn about the practices from
+			other parts of the world, investigate what
+			could be taken from foreign ideas and whether
+			they could be valuable to Western graphic
+			design and our society. These Japanese ideas
+			are fascinating, because even though they are
+			ancient concepts, they are still visible in
+			Japanese contemporary society and deeply built
+			into their mentality. Graphic designer, author
+			and curator Kenya Hara states: </div>
+
+			<br>
+				<div class="hideme">
+					<p>
+						<h3>
+							"Today, we seem to be experiencing a rationalization of the senses. The art of refinement has been half-forgotten, and attentiveness to detail, absorption, and slow engagement are neglected <sup class="src_link">3</sup>.” 
+						</h3>
+					</p>
+				</div>
+				<br>
+	
+			<div class="hideme">This statement applies to today’s world, especially in the West, with its overwhelming and constantly accelerating consumer and material culture and fast-paced lifestyles. This is also seen in the field of graphic design, including the rise of extravagant and rather inharmonious trends. Therefore, I wonder if Western design could benefit from a new kind of aesthetics that are so subtle and do not ‘shout out’ the message? </div>
+
+			<br>
+
+			<div class="hideme">Simplicity contains numerous benefits for our technological and material-saturated society and ways of living, yet we keep on neglecting it and instead strive for the most complicated and excessive. Could we enhance our visual communication by examining the traditional Japanese aesthetic principles? This thesis will investigate the qualities and values of traditional Japanese aesthetic concepts, concentrating on simplicity, and analyze its presence and significance in Japanese contemporary design. Where are these powerful and inspiring aesthetic values originating? How did the discovery of simple beauty come about? What makes Japanese aesthetics distinctive from rest of the world? Why is this topic valuable and fascinating for a non-Japanese? </div>
+
+			<br>
+
+			<div class="hideme">This research will analyze these matters in the context of the work of contemporary designer Kenya Hara among other notable Japanese designers. By using “Void” from the architect Tapio Periäinen, I would also like to explore the importance of simplicity from an ecological point of view against our wasteful habits of consumption. Sometimes the best answers can be found in the most unexpected forms. </div>
+
+			<br>
+
+			<A NAME="origin"></a>
+			<div class="origin">
+			<h4>Origin of Japanese aesthetics </h4>
+
+			<br>
+
+			<div class="hideme">Japan has a worldwide reputation for its focus on beauty in many aspects of its culture, such as in their arts, poetry, calligraphy, the traditional tea ceremony, consumer goods and architecture. The refined, simplistic aesthetic taste, seen especially in the traditional Japanese architecture, has played a huge influence on designers and artists in the West, most notably Vincent van Gogh and architect Frank Lloyd Wright.<sup class="src_link">4</sup></b> It has also inspired the minimalist movement, where things are stripped to its essentials.<sup class="src_link">5</sup></b> 
+			</div>
+
+			<br>
+
+			<div class="hideme">In order to understand the uniqueness of the Japanese aesthetics, it is crucial to get to know their origin and the Japanese worldview. Their concepts of aesthetics, starting from the Heian era (15th century)<sup>6</sup>, are deeply rooted in the Zen Buddhist thoughts of ‘material poverty, spiritual richness’ and the elimination of everything unnecessary in the surroundings and in the mind. Currently, Japan has become a fascinating mix of aspects from both East and the West. It seems as if the country has managed to develop and preserve its recognizable and distinctive traditional aesthetic values, even after the vast influence from the consumer culture of the West. </div> 
+
+			<br>
+
+			<div class="hideme">According to author Nancy Walkup, the geographic isolation of Japan played an important role in the development of the distinctive aesthetics<sup class="src_link">7</sup></b>.  Being isolated by the sea protected the country from foreign invasion and influence and allowed for the development of original aesthetic ideas. Americans traders broke the isolation in the 19th century and since then the West has had an immense influence on the modern Japanese culture. Walkup explains that the Japanese term for art, ‘katachi’, means ‘form and design’. Its implication is that art is synonymous with living, functional purpose and spiritual simplicity<sup class="src_link">8</sup></b>. Inspired by Zen philosophy, the Japanese translated the ideas of the ultimate simplicity into aesthetics and design elements. The rock garden in Ryoanji temple is an example that demonstrates refined simplicity. This garden consists of 15 stones arranged apart from each other, bound by a vast emptines.This way, the focus is on the essence of the elements, while stimulating meditation. </div>
+
+			<br>
+
+				<div class="hideme"> 
+					<h3>
+						<div id="temple"><img src="images/temple.jpg">				 
+					</h3>
+
+			</div>
+
+			<br>
+
+			<div class="hideme">The essential aesthetic ideal of the traditional Japanese culture and worldview is harmony with nature. Despite the changes brought about by the westernization of Japanese culture, these ideas are still visible in the everyday lives of the Japanese<sup class="src_link">9</sup>. The deep appreciation towards nature can be seen for instance in the way the Japanese society concentrates on finding balance between man and nature. In the Heian era, Japan found a new focus on nature by appreciating its unpredictability and imperfections<sup class="src_link">10</sup>. The Japanese had to accept the harsh nature the country faces in every season, like earthquakes, tsunamis, volcanic eruptions and monsoons.</div>
+
+			<br>
+
+			<div class="hideme">The high contrast between technology and nature, as well as the contrast between Western consumer influence and the pure Japanese traditions are very visible in Japan’s current landscape. When browsing through the busy streets of one of their biggest cities, such as a high-tech, future oriented city like Tokyo, it is hard to find any traces from the traditional values. The streets filled with masses of people, material hysteria, screaming bold colors and flashing billboards and advertisements, makes it look like any big Western city. On the contrary, when entering the temples within the city or the rural countryside, one is bound by serenity and tranquility. Even though the contrast between the urban and the rural is so distinctive, it is exactly that which seems to fit perfectly, complement each other and come together harmoniously. It is those various temples and gardens spread around cities that indicate the Japanese awareness and bond with nature.</div> 
+
+			<br>
+
+			<div class="hideme">In his book about wabi-sabi, author Leonard Koren says that the traditional Japanese aesthetics are an exact opposite of the Western ideal of ultimate beauty<sup class="src_link">11</sup></b>. According to him, in most of the Western world the conventional beauty is something monumental, durable and spectacular, whereas in Japan beauty is seen in subtlety, simplicity and in the banal everyday matters<sup class="src_link">12</sup></b>. In the West, it is uncommon to look for contentment in the mundane and the simple. We are taught to strive for perfection and the most extraordinary results. The West is also rather materially oriented, whereas the East traditionally emphasizes the spiritual.</div>  
+
+			<br>
+
+			<div class="hideme">The numerous aesthetic concepts that even the Japanese have trouble explaining are quite challenging to grasp for a non-Japanese. Yet, these concepts are something that each Japanese person understands deep within. These concepts include Ma and Wabi-sabi and all depict a different kind of beauty. The common ideology of these concepts is that beauty can be found in the most unexpected forms; especially in simplicity and in emptiness<sup class="src_link">13</sup></b>.  Wabi-sabi characterizes rural and desolate beauty while Ma, an empty and formless beauty, sees emptiness as the ultimate simplicity<sup class="src_link">14</sup></b>. </div>
+
+			<br>
+
+				<A NAME="desolate"></a>
+
+	 			<div class="desolate">
+				<h4>Beauty in the desolate </h4>
+			
+				<br>
+
+				<div class="hideme">Wabi-sabi is the most visible and characteristic aspect of the traditional Japanese aesthetics. Wabi-sabi ideas are closely linked to Zen Buddhist thoughts and were present already in the earliest examples of Japanese literature<sup class="src_link">15</sup>. Wabi-sabi is not just an aesthetic concept, but it could serve as a way of life of ignoring material hierarchy and concentrating on the essence of matters. The concept depicts refined simplicity and celebrates things that are crude, faded and unnoticed. Leonard Koren explains that Wabi-sabi sees beauty in the most unconventional, minor and overlooked matters. “Wabi-sabi is the beauty of the imperfect, impermanent, incomplete, modest, humble and the unconventional. Wabi-sabi objects are earthy, simple, unpretentious and made out of natural materials<sup class="src_link">16</sup>.” In short it is the opposite of today’s mass-produced, technology oriented culture and modernism. </div>
+
+				<br>
+
+				<div class="hideme">“Wabi-sabi is not about gorgeous flowers, majestic trees, or bold landscapes. It is about the minor and the hidden, the tentative and the ephemeral: things so subtle and evanescent that they are invisible to the vulgar eyes<sup class="src_link">17</sup>.” Wabi-sabi does not see beauty in the gorgeousness of blooming cherry blossom trees, but in the process of the leaves withering away. This kind if unconventional beauty is clearly not for anyone’s taste and in order to appreciate the beauty of it, one needs a different mindset that lacks of prejudice. Seeing beauty in the ugliness and imperfection is uncommon in our world.</div>
+
+				<br>
+
+				<div class="hideme">The Japanese tea ceremony is considered as one of the most important traditional Japanese arts. The ceremony embodies the ultimate, almost primitive, simplicity. “Although Wabi-sabi quickly permeates almost every aspect of sophisticated Japanese culture and taste, it reached its most comprehensive realization within the context of the tea ceremony”<sup class="src_link">18</sup>, The tea ‘celebrates’ the mundane, everyday ritual of drinking tea. What makes it less ‘mundane’ is the fact that it is taking place in a special tea hut; a completely empty space. There is nothing else in the room apart from a temporary decorative object such as a flower arrangement. The tea ceremony is the definition of aesthetic simplicity, harmony, respect and tranquility. Finnish architect Tapio Periäinen states: “its ideal, to come closer to nature, is realized by sheltering oneself under a thatched roof in a room which is hardly ten square feet<sup class="src_link">19</sup>.” It serves as a pause and a quiet moment away from the hectic daily lives.</div>
+
+				<br>
+
+				<div class="hideme">Learning to appreciate and understand Wabi-sabi ideas could free people’s minds from ignorance, and wake them out from their everyday ‘numbness’. It could serve as a reminder that we are on this planet only temporarily and that all our material belongings are impermanent. It could make us put emphasis on the things that truly matter and eliminate the unnecessary from our lives. Some aspects of Wabi-sabi seem similar to modernist thoughts. Although both of them embrace simplicity, this concept is the opposite of modernism. Wabi-sabi is human and nature-oriented, whereas modernism is technology-oriented. Modernism concentrates on endurance and man-made aspects; Wabi-sabi is about natural materials and impermanent things<sup class="src_link">20</sup>. The essay In praise of Shadows by author Jun’ichiro Tanizaki is an inspiring insight into Japanese aesthetics. The essay is about how oriental art and literature represents an appreciation of shadows and subtlety.</div>
+
+				<br>
+				
+					<div class="hideme">
+						<h3>
+							“Whenever I see the alcove of a tastefully built Japanese room, I marvel at our comprehension of the secrets of shadows, our sensitive use of shadow and light. The “mysterious orient” of which Westerners speak probably refers to the uncanny silence of these dark places… Where lies the key to this mystery? Ultimately it is the magic of shadows<sup class="src_link">21</sup>.”
+						</h3>
+				</div>
+
+				<br>
+
+				<div class="hideme">The essay juxtaposes the cultures of the East and the West. It discusses traditional Japanese aesthetics in contrast to the changes westernization brings to Japan, and how the West is always striving for progress and searches for clarity. Some of the typical characteristics of Japanese aesthetics include asymmetry, roughness, simplicity, economy, modesty, and appreciation of the honest integrity of natural objects and processes.</div>
+
+				<br>
+
+				<div class="hideme">Wabi-sabi ideals are most evident in the arts, architecture and interior design. Prominent fashion designer Rei Kawakubo of Commes des Carcons is known for embracing Wabi-sabi aesthetics in her designs. The asymmetrical, worn-out, and deconstructed elements of these garments show that beauty does not always need to exist only in the conventional.</div>
+
+				<br>
 
 
-<div class="totop">
-  <a href="#content">Back to top</a>
-</div>
+				<div class="hideme"> 
+					<h3>
+						<div id="rei"><img src="images/rei.png">
+					    <i>Rei Kawakubo, Commes des Carcons</i>.
+					</h3>
+				</div>
+
+				<br>
+				<br>
+			
+
+			<A NAME="empty"></a>
+
+			<div class="empty">
+				<h4>Beauty in emptiness</h4>
+
+				<br>
+				<br>
+
+				<div class="hideme"> Emptiness is the basic concept of Japanese aesthetics. Periäinen explains the meaning of ‘Ma’ in his book ‘Void’ by “being the pure and essential void between all things<sup class="src_link">22</sup>” and the ultimate form of simplicity. It sees nothingness as the center and origin of everything and a space where things originate and evolve from<sup class="src_link">23</sup>”. Ma is present in the Japanese architecture, garden design, music, flower arrangements, calligraphy and poetry. Just like Wabi-sabi, it is a way of life, not only a philosophical and artistic concept. </div>
+
+				<br>
+
+				<div class="hideme">Simplicity in the West has existed only for a little while compared to Japan, where it has been an important part of life for more than 300 years<sup class="src_link">24</sup>”. In the West however, simplicity was first introduced by the American arts movement minimalism. It began in New York City in the late 1960s and notable contributors include Donald Judd and Frank Stella<sup class="src_link">25</sup>”.</div>
+
+				<br>
+
+				<div class="hideme">Emptiness, in the West, usually has negative connotations and is linked with words such as boring, un-sophisticated and unfinished. In the East, emptiness possesses endless possibilities and is the element of ultimate sophistication. To describe the meaning of Ma, Periäinen uses the Japanese flag as an example. The widely known flag has a red circle in the middle, surrounded by blank space. The flag does not have any profound meaning to it, but the emptiness around the red circle is open to many interpretations, a rising sun being one of them. Periäinen also describes Ma by being the pauses in speech, which make the words standout and the white space around letters that enables the shape to exist:</div>
+
+				<br>
+					<div class="hideme">
+						<h3>
+							“It is the purposeful pauses in speech, which make the words stand out, and it is the quiet time we need to make our busy lives meaningful. It is the silence between the notes, which make the music, and MA is what creates the peace of mind we all need, so that there is room for our thoughts to exists properly<sup class="src_link">26</sup>.”
+						</h3>
+				</div>
+				
+				<br>
+
+				<div class="hideme">The famous painting Pine Trees (1539-1610) from Hasegawa Tohaku is a great example of beauty seen in emptiness and the use of negative space. The painting consists of only a few pine trees wrapped around the mist. It is the emptiness of the mist that allows those trees to stand out and it is what creates the powerful atmosphere of the painting.</div>
+
+				<br>
+
+			
+				<div class="hideme"> 
+					<h3>
+						<div id="pine"><img src="images/pine.jpg">			 
+					</h3>
+				
+				<br>
+
+				</div>
+				
+				<div class="hideme">Emptiness plays the most important part in the living space and interior decoration of a Japanese house<sup class="src_link">27</sup>”. A typical Japanese house contains serenity and peacefulness due to the predominant emptiness. The most sophisticated Japanese houses contain nothing unnecessary and is consequently free from clutter and chaos. The dominance of emptiness accentuates the objects present. To the eyes of a Westerner, Japanese houses may seem modest due to the sizes of the rooms and the lack of furniture. Most Japanese rooms do not have what is necessary to Western houses: beds, shelves and a large dinner table with stools. The beds are stored away during the daytime, in order for the space to become multifunctional. The emptiness allows the room to stay flexible and adapt to different requirements.</div>
+
+				<br>
+
+				<div class="hideme">This kind of lifestyle is quite contrasting to the Western standards. It seems as if material glory is needed in our surroundings to fill the void and to create meaning in our lives. This can be seen especially in most Western interior design, where we have the need to cover our walls with paintings and frames and tables filled with all sorts of ornamental objects. In the past, we needed this kind of extravagancy to demonstrate the power of the king or an emperor, but in today’s democratic world kings do not possess such power anymore and such ‘show off’ is not necessary<sup class="src_link">28</sup>”. One exception from Western standards that embraces simplicity and ‘white’ is Scandinavian design, where simplicity, nature and the ‘less is more’ concept are the key design elements. Another aspect of Japanese life where this kind of refined simplicity is found is in the Ikebana flower arrangement. Hara claims: “a vessel full of something, mounted high with whatever it may be, is never as beautiful as one that is empty”<sup class="src_link">29</sup>”. This is directed at Ikebana, where only a few flowers and branches are used in a way that is not found in real nature.Natalie Avella, author of ‘Graphic Japan’, points out that:</div>
+
+					<br>
+					<div class="hideme">
+						<h3>“the Japanese sensibility sees no beauty in a mass of flowers in a vase. The single flower loses its effect in the mass, and opulence alone is not considered a virtue in an arrangement<sup class="src_link">30</sup>”.
+						</h3>
+					<br>
+				</div>
+
+				 <div class="hideme">Limited, careful use of material and space and the balance between those two in Ikebana is rather similar to the method of work of many of Japan’s most well-known designers: restrained use of text, color and line.In this chapter, I have discussed two notable Japanese aesthetic concepts. The next chapter analyses how these philosophies are used in contemporary context, focusing most specifically in graphic design.</div>
+
+			</div>
+
+				<br>
+				<br>
+			
+			<A NAME="ordinary"></a>
+
+			<div class="ordinary">
+				<h4>Simplicity </h4>
+
+				<br>
+				<br>
+
+				<div class="hideme"> Like its society, the aesthetics of contemporary Japanese graphic design have a unique mix of traditional cultural influences while at the same time these aesthetics push towards global innovation. The design values concentrate on quality, elegance and innovative thinking. The design style is focused on simple and clean design solutions, and leans towards use of natural materials. In the Western world, it is often acknowledged that modernity will destroy cultural traditions. Conversely, Hara views design as a cultural product and that “design should aid you in tracing perceptions and objects to their origins<sup class="src_link">30</sup>”. That being said, Japanese design often uses traditional ideology successfully transforming and updating them into contemporary context<sup class="src_link">31</sup>”. Simplicity is the key design element and it is the prevailing aspect of Japanese design. It is important to note that the term ‘simplicity’ does not imply a lack of content by any means.</div>
+
+				<br>
+				<div class="hideme">Kenya Hara explains Japan’s fascination towards simplicity and minimalism by being “the most comfortable way for Japan to face the world<sup class="src_link">32</sup>””. Hara is seen as the future of Japanese design, because of his ability to express and communicate a clear Japanese design philosophy that is aware of the past and insightful to the present<sup class="src_link">33</sup>”. He applies everyday observations with reflections on Japanese aesthetics and sensitivity to his work. Hara believes that Asian countries hold a key cultural resource that cannot be found anywhere else in the world and that “lifestyle has value in Asia”. Hara said: “The Swiss have their cheese, the French their wine, but Hara’s future Japan will be based on the export of a way of life<sup class="src_link">34</sup>”” </div>
+
+				<br>
+
+				<div class="hideme"> Hara’s design principles are profoundly associated with the Japanese aesthetic concept of emptiness.This Japanese concept is similar to the Western idea of simplicity. There are, however, numerous differences with one being the fact that in Japan it is viewed as a positive quality. Emptiness is the “possibility yet to be filled<sup class="src_link">35</sup>”. Hara’s book ‘White’ is entirely dedicated on this subject matter, white being closely intertwined with emptiness. Hara explains that emptiness is what makes people and things what they are: “reality can be understood as background noise with nothing much going on and out of emptiness would (ideally) emerge the viewer’s questions, theories, and efforts to forge independent meaning<sup class="src_link">36</sup>”. Hara believes this to be a uniquely Japanese quality. “I hope to design outside the consideration of a form<sup class="src_link">37</sup>”,” he explains.</div>
+				
+				<br>
+				<br>
+			
+				<p><h4>Emptiness in communication</h4>
+
+					<br>
+					<br>
+					
+					<div class="hideme">
+					Hara uses a vessel to explain the value of emptiness in graphic design:
+					</div>
+
+					<br>
+					<div>
+					
+						<div class="hideme"><h3>
+							<i>“the mechanism of communication is activated when we look at an empty vessel, not as a negative state, but in terms of its capability to be filled with something.”</i> <sup class="src_link">38</sup>”
+						</h3>
+					
+				</div>
+					<BR>
+
+				<div class="hideme"> If a vessel is already filled with stuff, it cannot be filled anymore and subsequently fails to present any new opportunities. Emptiness lets the mind and its creativity wander freely. Japanese conversations use emptiness the same way Hara uses empty space in his design work. He writes about the power of non-verbal communication such as a nod or eye contact that can convey so much.</div>
+
+				<br>
+				
+				<div class="hideme"> The Japanese way of communication is full of emptiness: subjects of sentences are often left unsaid and left for the imagination and speculation<sup class="src_link">39</sup>”. The Japanese people see words as not always necessary in a conversation. This opposes the Western standards of communication, which is more direct. In most countries, especially in the United States, a silence in a conversation is considered awkward and the conversation needs constantly go on to avoid awkwardness. Hara views people reaching a harmony in silence to be a highly sophisticated level of communication. Listening is a crucial part of it and this applies also to design: “good communication has the distinction of being able to listen to each other, rather than to press one’s opinion onto the opponentsup class="src_link">40</sup>.” Hara explains: “Each party must work to surmise the other’s position. This mutual work eliminates three or four steps in the dialogue before the first word is even spoken<sup class="src_link">41</sup>.” </div>
+
+				<br>
+
+				<div class="hideme"> Hara’s work has elements of courtesy that can be linked with the Japanese mentality of politeness and respectfulness. As he states, a good design should not always impose ideas and opinions onto its viewer; instead it should leave room for interpretation and the viewer to experience the work, also from a personal, imaginative level<sup class="src_link">42</sup>. Hara, in common with many Japanese artists and designers, uses a lack of detail and void around an object in order to leave the interpretation up to the audience. His design of the perfume bottles for the Japanese fashion brand Kenzo obeys his design aesthetics and taste; it is all about the clean, simple form. Nothing unnecessary; it revolves around the functionality of the object in its purest form. It is a good example how emptiness could be a powerful design element.</div>
+
+				<br>
+				<br>
 
 
+				<div class="hideme"><h4>Designing for the senses</h4>
+
+				<br>
+				<br>
+
+				Japanese design emphasizes how an object is felt or accepted. “Hara intensifies the need to critically adjust our understanding of the senses. He challenges the simplifications that inform much present day thought concerning what could be felt, experienced, and emotionally negotiated<sup class="src_link">43</sup>."
+				<BR>
+				<br>
+				</div>
+
+				<div class="hideme">Hara states that in today’s world a lot of slow engagement is neglected and replaced by a digital screen and that our senses must be ‘awakened’ from the mind-numbing routines of our daily lives. Hara’s ‘HAPTIC_Awakening the senses’(2004) exhibition does exactly that. It focuses on the interaction between an object and human senses, stimulating and using them to change our perception of our surrounding. The exhibition consisted of contemporary designs researching the theme of perceiving senses through material choices, shape, color and texture. His motive was to design an object through which a person can sense and physically feel something.</div>
+
+				<div class="hideme">The logo of the exhibition was letters drawn with cultivated fungus. An example from the exhibition that demonstrates this kind of awakening is the limp remote control. When the remote control is switched off, it hangs down as if it were dead, similar to Salvador Dali’s surreal painting style of the melting clock. The material used for the production was unusual and was responsive to the touch of a human. New perspective on the so-called mundane objects is beneficial, because it enables us to see things in a new light.</div>
+
+				<br>
+				<br>
+
+				<div class="hideme"><h4>Defamiliarization of the ordinary</h4>
+				<br>
+
+				<br>
+				 Hara states that ‘defamiliarization’ is closely related to ‘white’ and emptiness. “White moves in the opposite direction of chaos; it is the singular image that emerges from disorder<sup class="src_link">44</sup>.” He explains that when he meditates on an object, it becomes refreshingly different, as if he had just encountered it for the first time<sup>45</sup></b>. When thinking about our everyday objects, we use and encounter them every day but yet we do not really acknowledge their value and the possibilities they possess.These objects may have become too common for us, rendering them into something trivial. Hara believes that a good design creates another perspective on something and the user will “never look at an everyday object in quite the same way again”. He calls this kind of thought process an ‘awakening’; something that could deepen our understanding of objects and our surroundings. It could awaken us from the numbness of being in our daily comfort zones and help us to regain perspectives of our surroundings and the objects around us. He states: “design should make the known become unknown<sup class="src_link">46</sup>.”
+				 </div>
+
+				 <br>
+
+				<div class="hideme"> Hara’s designs defamiliarize every day matter by distortion and manipulating the scale or the perspective. His exhibition ‘Architect’s Macaroni Exhibition’ is a great example of that. Hara asked twenty architects to redesign macaroni that is 50 times bigger than normal. The chief research question was ‘what does macaroni and architecture have in common?’ The context being abnormal to begin with, the results were quite astounding. The architects had a total freedom of redesigning pasta, which resulted in complex and futuristic designs that are unrecognizable as the pasta found in the supermarket. </div>
+
+				<br>
+
+				<div class="hideme"> 
+					<h3>
+						 <div id="imgage1"><img src="images/macaroni_face-01.png"> Kenya Hara:
+						 Architect's macaroni exhibition
+					</h3>
+				<BR>
+				</div>
+
+					<BR>
+					<div class="hideme"> 
+						<h3>
+							<BR><BR><div id="pasta1"><img src="images/pasta1.jpg"><BR><BR>
+						</h3>
+					</div>
+
+				<br>
+
+				<div class="hideme">By redesigning the everyday, the objects that have become trivial to us ultimately become something extraordinary. It is not as creative to design things representing their original form; they grab more attention when they are out of the ordinary and present new possibilities and dimensions. However, these designs of the pasta are too peculiar to be sold commercially. It does, however, make the viewer look at the ‘boring’ pasta on our plates in a new light and realize its sophisticated design that we hardly ever pay attention to. Hara explains how the ‘defamiliarization’ of an everyday object works. He talks about how numerous artists, including Yasuhiro Ishimoto<sup>47</sup>, have tried to transform ordinary flowers (figure 8) into something unfamiliar and unknown<sup class="src_link">47</sup>. </div>
+
+					<br>
+					<div class="hideme">
+						<h3>
+							”Yet if we perceive a flower as a living entity, even in a picture, we can come closer to reading its true essence. Photographers often compete to take pictures of flowers for reasons that have nothing to do with their beauty. Rather, they desire to reach the point where they can capture the living flowers in a way that no one ever has before<sup class="src_link">48</sup>.”
+						</h3>
+					
+				</div>
+					<BR>
+		
+				<div class="hideme">An object that we encounter constantly on our everyday basis is likely to become so normal for us that it becomes trivial. Therefore the attempt to create unfamiliar objects in the essence of creativity could lead us to understand things in this world and make us realize what is the core to be a human. When we see an object we take for granted in an unfamiliar context we will notice it again in a new perspective. The ordinary objects around us may not have much aesthetic appeal at first glance, but they do play an important part on our lives and indicate things about our existence. Therefore we should stop overlooking the mundane and start appreciating their possible aesthetic qualities. It is, however, difficult because we are programmed to strive for perfection and greatness in aesthetics.</div>
+
+				<br>
+
+				<div class="hideme">Gurafiku
+
+				<br>
+
+				‘Gurafiku’<sup>50</sup>is an online magazine dedicated to showcase contemporary Japanese graphic design. Exploring the online magazine, the links to the traditional concepts are evident in many of the poster designs. For instance, the images and typography are often wrapped around empty space. Wabi-sabi elements can be seen in the hand-made aspects and playful imperfections. The influence from Western graphic design is obviously evident, but the usage of empty space, simple shapes and hand-made imperfections and textures indicate the underlying inspiration from the traditional ideals.</div>
+
+				<br>
+
+				<div class="hideme">Writer Antoine de Saint-Exupery states:
+
+					<BR>
+						<h3>
+							“perfection (in design) is achieved not when there is nothing more to add, but rather when there is nothing more to take away”.<sup class="src_link">51</sup>
+						</h3>
+				</div>
+				<BR>
+
+				 <div class="hideme"> This statement applies to these specific poster designs where the design elements have been stripped to the maximum; yet still remain interesting for the viewer. It is intriguing how these designs possess the opposing atmosphere to the vivid and hectic landscape of the city. Instead of being imposing and shouting the message, these posters gently allure attention. Such ‘in your face’ approach is not always necessary, when the design is able to communicate a clear visual idea. The refreshing emptiness around the typography and the images together with the pastel color palette and bold unpretentious lines catch the attention immediately and is pleasing to the eye due to the peacefulness it emits through the harmonious and well-composed design elements. </div>
+
+				 <br>
+
+				<div class="hideme"> Graphic designer Koichi Sato’s posters are a good example of a mix of traditional taste together with contemporary and futuristic imagery. Graphic designer Shigeo Fukuda’s<sup class="src_link">51</sup>  posters often are inspired by the possibilities that negative and empty space possess. He uses those qualities to create optical illusions. His posters portray a creative way of using negative space for his benefit. When white space is used in an intriguing manner, it transforms into foreground. “The emptiness becomes the positive shape and the positive and negative areas become intricately linked.” It is often a lack of controlled white space that produces visual noise and inharmonious design. Author Alex White supports this claim: </div>
+
+				<BR>
+
+				<div>
+					<div class="hideme">
+						<h3>
+							“Emptiness in two-dimensional design is called white space and lies behind the type and imagery. But it is more than just the background of a design, for if a design’s background alone were properly constructed, the overall design would immediately double in clarity and usefulness<sup class="src_link">53</sup>.”
+						</h3>
+				</div>
+				<br>
+
+				<div class="hideme"> Dynamic white space, abstraction and removing unnecessary details are the key to sophisticated design. He states that most design education is concerned with combining and sometimes inventing bits of content and it almost always overlooks the critically important part of the design that goes unnoticed: the background spaces and shapes. White space is like the glue that holds all the other elements in place<sup class="src_link">54</sup>.</div>
+
+				<br>
+
+				<div class="hideme"> 
+					<h3>
+						<BR><BR><div id="sato"><img src="images/sato.jpg"><BR><BR> 
+						 Poster design by Koichi Sato
+					</h3>
+					</div>
+				<br>
+
+				<div class="hideme"> 
+					<h3>
+						 <div id="8"><img src="images/8.jpg">
+						 <i>Redesign of chocolate bar</i>
+					</h3>
+				</div>
+
+ 			<br>
+
+			<A NAME="innovation"></a>
+			<div class="innovation">
+				<h4>Sustainability and design</h4>
+
+				<div class="hideme">As seen in the interior design of Japanese houses and in Zen Buddhist ideas, Hara’s design sees the importance of removing all the decorations and everything that is unnecessary. Clutter hides us from the true essence of things and too much of anything is a distraction. This design philosophy can be especially seen in the products of Muji<sup class="src_link">55</sup>. Muji’s aesthetics and ideology is directly derived from the Japanese aesthetics of emptiness. It is distinguished by its minimalism and respect towards nature. It emphases on recycling and avoids waste in production and packaging. It also emphases a no-logo policy<sup class="src_link">56</sup>, implying that only a little amount of money is used for marketing and advertisement.Their design style has been described to have ‘mundanity, being ‘no-frills’ and ‘minimalist’ and also as ‘Bauhaus-style’<sup class="src_link">57</sup>.</div>
+				<br>
+
+				<div class="hideme">Muji’s product design and brand identity is based around the natural materials, efficient manufacturing processes and minimal packaging. The products have a very natural color palette and all the product labels are the same and indicate only the contents of the product. The image of a man surrounded by void summarizes the ideology of Muji. He looks so tiny and humble amongst the greatness and over powering void, which fits in with their ideology that man is not the center of the world, but equal to everything and that nature cannot be controlled; instead, we should strive for harmony with it.</div>
+				<br>
+
+				<div class="hideme">‘RE-DESIGN daily products of the 21st Century’ is another of Hara’s exhibitions. It shows how daily life serves as a great source for design<sup class="src_link">58</sup>. These ordinary objects include toilet paper, tea bags and matches. The goal was to redesign familiar objects in a unique way to create new experiences and ways to use them. Some of the objects were made to make our daily lives more beautiful and our daily routines more enjoyable. Some objects did the opposite; in fact some became harder to use in order to convey a serious message<sup class="src_link">59</sup>. This happened with the redesign of toilet paper, designed by Shigeru Ban<sup class="src_link">60</sup>: the hole in the paper roll  was cut in a square shape instead of a circle, which made it difficult to roll and in the end you consume less toilet paper. Making a little but substantial alteration to the design, changed its purpose: instead of being just a toilet paper roll, it now serves as a reminder of our wasteful and unsustainable habits and that we should cut down and slow consumption of paper.</div>
+
+				<br>
+
+				<div class="hideme">Matches were redesigned in a way that they look like real twigs from a tree to remind us of diminishing forests. These redesigned products are all about preservation and renewal by making simple, yet thoughtful alterations. The chocolate bar may seem at first just like an ordinary cute pattern, but because of the cut of the pattern, you will end up eating less chocolate, resulting in fewer consumed calories. This reminds the audience to cut down sugar consumption, because of the numerous underlying health hazards.</div>
+				<br>
+
+				<div class="hideme">In his book ‘Designing Design’ Hara elaborates on the importance of emptiness in both the visual and philosophical traditions of Japan and its application to design. The title of the book means changing the traditional into totally new ideas, such as changing its original design, including shapes, functions and concepts<sup class="src_link">61</sup>.This creates a new way to face our daily life and daily products. These works are about the products of daily life, like square tissue and redesigning pasta. The realistic looking silicone molded ‘cabbage bowls’ by designer Yasuhiro Suzuki peels off leaves that become its own functional bowl. Designers should face the real needs of our daily life that could help them to find the real meaning of contemporary product design. It is unusual for people to see pleasures in the ordinary. In order for us to make an aesthetic judgment of an ordinary object, we must first experience that object in a different form, giving it greater significance than the other, similar, objects around it.</div>
+				<br>
+
+				<div class="hideme"> 
+					<h3>
+						<div id="bowl"><img src="images/bowl.jpg"> Silicone Cabbage bowls by Yasuhiro Suzuki	 
+					</h3>
+				</div>
+				<br>
+
+				<div class="hideme">Naoto Fukusawa’s<sup class="src_link">62</sup> juice box package design portrays a new imaginative approach on packaging design. The design imitates the skin textures of real fruits. They bring out a new simplistic, refreshing take on packaging design that unquestionably stands out from the rest of the food market. The simplicity of the design puts the emphasis on the function and essence of the object. It also makes us face the reality that we tend to forget or simply ignore where for example our food comes from and therefore we could create more awareness with more design approaches like this. According to Hara, design should not aim for the short-term response, but focus on the long-term purpose: “if every designer had this kind of pursuit, the quality of modern designing could be improved. When the public understands designers, the design industry of modern products could have a bigger market.”</div>
+				<br>
+
+				<div class="hideme"> 
+					<h3>
+						<BR><BR><div id="juice"><img src="images/juice.jpg"><BR><BR>
+						Naoto Fukusawa’s juice box package
+					</h3>
+				</div>
+				<br>
+
+		 		<div class="hideme">The word ‘Re-Design’ includes the meaning of recreating the definition of normal products. Hara encourages designers to improve the value and functions of these daily products in order to find the purpose of designing. Hara uses the redesigning of a cup as an example: “designers can follow the ideas of original function, which is holding water but not the current structure and trends. As long as designers could produce items that can be filled with water, these products could be called ‘cup’<sup class="src_link">63</sup>” Our visual environment that we interact with every day plays an important part on our lives morally and socially.</div>
+
+		 		<br>
+
+				<div class="hideme">Hara’s designs combine active cultural imagination with a pragmatic engagement in everyday life. Design can be used to communicate a country’s values, history and possibilities. It can manipulate reality in a way so that it brings a new perspective to the viewer. Taking the ideas of simplicity from the East and adapting it to our way of life could enhance not only the quality of our lives but our surroundings as well. An example of a mix of Eastern philosophy with Western design is demonstrated through the Rings-stools designed by Nao Tamura for Artek<sup class="src_link">63</sup>. Nature has drawn the ‘yearly rings’ of each tree differently: the thick rings indicate good years and the thin, the bad<sup class="src_link">64</sup>. This is a unique approach of using natural elements in a contemporary context.</div>
+				<br>
+
+				<div class="hideme"> 
+					<h4>
+						<div id="chair"><img src="images/chair.jpg">
+						 'Yearly rings' chair, Artek
+					</h4>
+			</div>
+			<BR>
 
 
-</div>
-</body>
+			<A NAME="eocological"></a>
 
- </td>
- </table>
+			<div class="ecological">
+				<div class="hideme"><h4>Ecological value of emptiness</h4></div>
+				<br>
+
+				<div class="hideme">Emptiness does not only present positive qualities within the arts, design and architecture, but has a massive potential in improving our environment that is facing some of the most serious issues of human history ranging from climate change to over population. According to Periäinen, emptiness creates possibilities for an ecologically sustainable coexistence of man-made environment and nature. 
+				“Let us think about those additional 7 billion people + the continuous economical and material growth desired by those already living<sup class="src_link">66</sup>.” 
+				Periäinen also says:</div>
+
+				<br>
+						<h3>
+							<div class="hideme">“Void empties thoughts of routines and prejudices and outgrown value structures. In Eastern thought the emptying of the mind is a prerequisite to grasp universal truth or enlightenment. It could help the West, as well, to embark upon a new and more natural era. <sup class="src_link">67</sup></div>
+						</h3>
+					<BR>
+
+				<div class="hideme">He wonders why so little emptiness has been interpreted in the Western lifestyles and mentality compared to Japan. In fact, West is known to be the culture of the full and excessive. 
+				Using empty space would not only be important for the restore and maintenance of the ecological balances, but also for the development of a more natural ways of living. This is because emptiness in practice eliminates material objects and borders. Meanings that emptiness offers a really powerful tool to decline materialism, thus easing the pressures put on living nature<sup class="src_link">68</sup>. The Zen Buddhist thoughts teach people to aim for ‘non-material emptiness’. Periäinen said:</div>
+
+					<br>
+						<h3>
+							“The non-material emptiness and the balance between the void and material could perhaps again be achieved by combining the old wisdom of the East with the technological know-how of the West.” <sup class="src_link">69</sup>
+						</h3>
+					<br>
+
+				<div class="hideme"> This could be applied for example in the sizes of produced objects and careful choice of environment-friendly materials. 
+				Periäinen states that “In Japan, seeds have also been sown for Western industrial product development: the size or volume of several gadgets, their amount of materials and components, is constantly reduced.” Like in Japan, the Nordic countries have also adapted a simplified and reduced design language that has become part of their country’s identity. This design language has not only aesthetic value, but is used in a position of more prominent ecological importance. </div>
+				<br>
+
+				<div class="hideme"> Designers today are familiar with the current tide that adds value to the creation of something new. I believe that design should seek for innovative, forward-thinking and experimental solutions. However, we have to do it in a conscious way that is aware of the currents of our world and in a way that we do not end up erasing the traces of our past and everything else standing on the way. To my understanding the Japanese sensibility is probably more adjusted towards preservation rather than only aiming for something completely new. We could make a change by reducing the size of gadgets and minimalising waste in production and making conscious choices for materials. To conclude this chapter, simplicity is not just an aesthetic concept but possess endless possibilities and solutions to enhance our lives and the environment. We have now researched simplicity and emptiness from a traditional side, in contemporary design context and from ecological point of view.</div>
+				<br>
+
+			</div>
+			<br>
+
+			<A NAME="conclusion"></a>
+			<div class="conclusion">
+				<h4>Conclusion</h4>
+				
+			<div class="hideme"> The starting point of this thesis was a personal fascination and curiosity towards the Japanese culture and design. Through this research I came to find out the real underlying fascination and motive for my interest. I realized that my curiosity lies in the fact that I can relate my own conceptions to some of the Japanese ideology. I believe this is because I grew up in Finland, where nature, quietness and simplicity are shared in both of the countries’ design philosophy. There is otherwise a huge contrast in the lifestyles and the differences in the worldviews between the West and Japan. Simplicity in Japan seems to be comparable to Western design principles of ‘less is more’; especially Scandinavian and Nordic design. The major difference is, though, that simplicity has existed far longer in Japan and is implemented into nearly every aspect of their society and culture. </div>
+			<br>
+
+			<div class="hideme"> The ancient Japanese aesthetic values present a different perspective on beauty for Western society. It suggests a more subtle approach that focuses on listening as a way of communication instead of ‘yelling out’ the message. In today’s consumer-saturated world, such refined design approach is aesthetically refreshing and soothing to the eye. That kind of design is effortless for the viewer, because the message can be seen instantly instead of searching for it through the visual clutter. 
+			I believe that more aesthetic awareness and new reflective ways of looking at the world are needed. Appreciation of the mundane and the subtle could serve as a solution to the hectic, digital lives of contemporary man, where slow engagement and absorption to detail seems to be neglected and replaced by a digital screen.</div>
+			<br>
+			
+			<div class="hideme">In Western society, everything is designed in a rather masculine manner and simplicity is often viewed as a banal and unsophisticated aspect. In our society, beauty is mostly seen in things that are magnificent and monumental. Many people today live selfishly ignoring others and the environment around them. We tend to forget that we are part of nature and simply cannot exist without it. From analyzing the Japanese aesthetic qualities and their impact on contemporary design and society, it gave me a good opportunity to compare and reflect upon my own culture and my role as a graphic designer. I discovered similarities to my own design vision and that I appreciate simplicity over abundance, altough sometimes I do tend to overdesign.</div>
+			<br>
+
+			<div class="hideme"> The main concepts I came across and that I intend to investigate further in my graduation project are the manipulation of the everyday objects to create awareness of sociological, environmental issues. The core of Japanese aesthetics is ‘material poorness and spiritual richness, whereas West is the culture of the excessive. A lot of Western design is aimed on technological development and advancement. Therefore, we are losing touch with our past and what it means to be human. We tend to focus and aim blindly only on the future, neglecting aspects and issues of the present day. Technological development has brought up massive improvements onto our lives and should not be hindered by any means. However, we should move forward in a more conscious manner that would not only benefit our environment and in a way that would not make us less humane. In other words, technology should be used to enhance the quality of life without erasing the human aspects of it. Beauty does not only exist in clean mathematical perfections but can be found in the unconventional such as in emptiness, the desolate and even imperfections.</div>
+			<br>
+
+			<div class="hideme">The Zen-inspired Japanese worldview seems in general more humane and nature-oriented and the design philosophy is directed towards preservation of the traditions. I can deeply appreciate Kenya Hara’s work, because he manages to use the traditional ideas in a innovative, present and future oriented way. We are well aware of the benefits simplicity possess, yet we neglect it. A reason for this could be that people are in a constant search of the more complicated and impressive. In the contemporary world everything is targeted to be quick and perfect. We often fear that simple ultimately means easy, unsophisticated or unfinished.  It is not common in our society to seek pleasures in the ordinary. The problem that simplicity faces is that it can easily get buried in the clutter and it needs to be powerful enough in order to stand out in today’s world. Simplicity is not only an aesthetic value, but has a moral perception that looks into the nature of truth and reveals the inner qualities of materials and objects for their essence. Empty design allows more meaning and opportunities.</div>
+			<br>
+
+			<div class="hideme"> Designers should not choose to be designers only for commercial reasons. Instead, designers have the power to present new aesthetic platforms that could challenge people’s standpoints and trigger them to live more consciously and see things in a new angle and consequently enhance their lives. Designers have responsibility of being socially, culturally, environmentally, politically aware. As an example, designers should embrace these vast environmental issues in their material choices by making sustainable and ecologically aware choices and make critical designs that raise awareness. As a designer, sustainability is something that I am passionate about and I would like to work in projects that embrace it. Design helps people to understand the changes in the world around us and turns them into our advantage by translating them into something that could enhance our lives.</div>
+			<br>
+			
+			<div class="hideme">The Japanese aesthetic values present non-Japanese people with a new perspective on what is considered as aesthetically pleasing. It teaches us that the unconventional aesthetics are just as important as the ones we are used to. These alternative aesthetics could change the ways we perceive things around us and make our mundane everyday routines more exciting and meaningful.</div>
+			<br>
+
+			<div class="hideme">
+			<A NAME="abstract"></a>
+			<div class="abstract">
+				<h4>Abstract</h4>
+			</div>
+
+				<div class="hideme">This research investigates traditional Japanese aesthetic values, concentrating on simplicity, and their presence in contemporary Japanese design. Despite being one of the top leading countries in technological advancement, Japan still manages to contain dominant and highly distinctive traditional features. These features are visible in contemporary society and deeply rooted in the everyday lives of the Japanese people. It is interesting that these aesthetic values are a total opposite from the Western standards where the conventional beauty is usually something monumental, extravagant and spectacular. 
+				In Western society, the ordinary and simplicity is neglected and considered as insignificant aspects of life. In contrast, the Japanese aesthetic values find beauty in refined simplicity, emptiness, desolate and in things often considered as mundane and ordinary. It may not be normal for us to appreciate the mundane, because they lack the same aesthetic appeal that is out of the norms for us. We are taught and pushed to strive for the best and to achieve the most extraordinary results.</div>
+				<br>
+
+				<div class="hideme">This paper examines what exactly makes these Japanese aesthetics so distinctive from rest of the world and why this kind of simplicity is so powerful and inspiring. With the diminishing cultural values in Japanese contemporary society and the heavy influence from the dominating Western design, are there still traces of the Japanese aesthetics in its contemporary design? The thesis will introduce Japanese aesthetic concepts Wabi-sabi, the beauty of simplicity, and Ma, which is the empty, formless beauty and examines how these are visible in the modern Japanese culture and design.The impact of these aesthetic qualities on contemporary Japanese (graphic) design is analyzed by exploring works of graphic designer Kenya Hara among other Japanese designers.</div>
+				<br>
+
+				<div class="hideme">The goal of the thesis is to find new perspectives and aesthetic experiences to put the things we take for granted on a daily basis in a new light. Also, new ways in which we could become socially more conscious and aware of our surroundings from an ecological point of view will be discussed. Crucial to this research is the importance of simplicity, not only in design but also from an ecological point of view. Japan’s use of ancient ideas and strive to update them in an innovative way to be valid in the contemporary society is admirable and can serve as an inspiration to designers. Instead of constantly searching for new perfection through focusing on technology and erasing a country’s traditions and culture, we can also aim for sustainable design solutions. Simplicity can present benefits for our society and way of living, yet we neglect it and keep striving for the most complicated and excessive. In today’s technology-saturated world, could we enhance our visual communication by examining the ancient Japanese aesthetic principles? ‘Greatness’ could exist in the inconspicuous and overlooked details. Sometimes answers can be found in the most unexpected forms.</div>
+				<br>
+
+			</div>
+			<br>
+
+
+			<A NAME="sources"></a>
+
+			<div class="sources">
+				<h4>Sources</h4>
+				<br>
+				<br>
+
+					Literature
+				<p>
+					Avella, N. (2012) <i>Graphic Japan: From Woodblock and Zen to Manga and Kawaii</i> Rotovision<BR>
+					Berger, J. (2011) <i>Ways of Seeing</i>, DACS London <BR>
+					Fletcher, A. (2001) <i>The Art of Looking Sideways</i>, Phaidon <BR>
+					Hara, K. (2007) <i>Designing Design</i>, Lars Müller Publishers <BR>
+					Hara, K. (2009) <i>White</i>, Lars Müller Publishers <BR>
+					Koren, L. (1994) <i>Wabi-Sabi for Artists, Designers, Poets and Philosophers</i>, Imperfect Publishing, California <BR>
+					Menegazzo, R. and Piotti, S.(2014) <i>Wa, the essence of Japanese Design</i>, Phaidon press <BR>
+					Maeda, J. (2006) <i>Laws of simplicity</i> <BR>
+					Okakura, K. (1964).<i>The Book of Tea</i>, New York: Dover Publications, Inc <BR>
+					Periäinen, T. (1998) <i>Void/Tyhjä</i>, Kustantajat Sarmala OY Finland<BR>
+					Sparke, P. (2009) <i>Japanese Design</i>, The Museum of Modern Art <BR>
+					Tanizaki, J. (1993) <i>In Praise of Shadows.</i>, Leete’s Island Books<BR>
+					White, A, W. (2002) <i>The Elements of Graphic Design.</i>, Allworth Press<BR> 
+					
+					</p>
+
+					Videos
+
+					<p>
+					Isao Tsujimoto (2011), <i>The Concept of Ma in Japanese Life and Culture</i> https://www.youtube.com/watch?v=VI0xgxCOf8E<BR>
+
+     				John Maeda: Designing for simplicity (2007) http://www.ted.com/talks<BR>
+
+					Kenya Hara exploring emptiness (2013) India Culture Lab https://www.youtube.com/watch?v=5BOeEEq0tJc
+					Pico I. (2013), Where is Home, TedTalks, http://www.ted.com/talks/pico_iyer_where_is_home?language=en<BR>
+
+
+					</p>
+
+					Online articles
+					
+					<p>Design Review books, <i>Kenya Hara, Designing Design</i>, (2009) http://www.designersreviewofbooks.com/2009/03/designing-design/<BR>
+					
+					Jacobsen, Thomas, <i>Beauty and the brain: culture, history and individual differ ences in aesthetic appreciation</i>http://www.ncbi.nlm.nih.gov/pmc/articles/<BR>
+					
+					Wawaza, <i>When Less is More: Concept of Japanese MA</i>, https://wawaza.com/pages/when-less-is-more-the-concept-of-japanese-ma.html<BR>
+					Muji, http://www.muji.eu/<BR>
+					Lehtovuori, O. (1998) <i>Tilan tyhjyydestä tyhjentävästi</i> www.hs.fi<BR>
+					Encyclopaedia Britannica. (2014) <i>Minimalism Art Movement</i> http://www.britannica.com/EBchecked/topic/384056/Minimalism
+					<BR>
+					Walkup, N. Japanese Aesthetics Tea Ceremony, https://ntieva.unt.edu<BR> 
+					DNA, <i>Designing daily lives, Kenya Hara</i> http://www.dnaindia.com<BR>
+					Prusinski, L. <i>Wabi-Sabi, Mono no Aware, and Ma: Tracing Traditional Japanese
+					Aesthetics Through Japanese History</i>, http://studiesonasia.illinoisstate.edu<BR>
+					Design Boom, (2012) <i>Kenya Hara: Designing Design</i>, http://www.designboom.com/
+					Ryan Hagerman, <i> A collection of visual research surveying the history of graphic design in Japan.</i>
+					http://gurafiku.tumblr.com/<BR>
+
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
