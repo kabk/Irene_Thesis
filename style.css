@@ -14,9 +14,10 @@ html, body {
 h1 {
 	font-size: 25px;
 	font-style: normal;
-	letter-spacing: 3.0px;
+	letter-spacing: 4.5px;
 	color: black;
 	line-height: 1.0;
+	
 }
 
 
@@ -70,7 +71,6 @@ h2:active{
 h3 {
 	position: relative;
 	font-size: 12pt;
-	font-family: Cabin;
 	letter-spacing: 0.9px;
 	font-style: normal;
 	left: 120px;
@@ -84,7 +84,6 @@ h4 {
 	font-size: 15px;
 	font-weight: bold;
 	text-align: center;
-	font-style: bold;
 	left: 50%;
 	margin-left: -200px;
 	width: 400px;
@@ -168,6 +167,7 @@ img {
 	padding: 10px;
 }
 
+
 .navclick {
 	position: fixed;
 	right: 30px;
@@ -213,14 +213,12 @@ img {
 
 .header3 {
 	position: fixed;
-	top: 0px;
-	height: 0px;
-	left: 0px;
-	color: black;
-	font-size: 9pt;
-	font-weight: normal;
+	left: 30px;
+	top: 10px;
+	text-align: right;
+	font-size: 10pt;
 }
-
+}
 
 
 .header4 {
@@ -246,14 +244,6 @@ img {
 	font-weight: normal;
 }
 
-.header6 {
-	position: fixed;
-	height: 10px;
-	right: 20px;
-	color: black;
-	font-size: 9pt;
-	font-weight: normal;
-}
 
 .mainsources {
 	position: absolute;
